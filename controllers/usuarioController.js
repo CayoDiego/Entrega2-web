@@ -10,11 +10,21 @@ class UsuarioController{
     }
 
     static async listar(req, res){
-        const salvo = req.query.s;
-        const removido = req.query.r;
-        const atualizado = req.query.a;
+        const s = req.query.s;
+        let mensagem;
+        let cor;
+        if (s == "1"){
+            mensagem = "Cadastrado com sucesso!"
+            cor = "Green";
+        } else if (s == "2"){
+            mensagem = "Removido com sucesso!"
+            cor = "Red";
+        } else if (s == "3"){
+            mensagem = "Alterado com sucesso!"
+            cor = "Green";
+        }
         const listaUsuarios = await UsuarioModel.find();
-        res.render("usuario/listar", {listaUsuarios, salvo, removido, atualizado});
+        res.render("usuario/listar", {listaUsuarios, mensagem, cor});
     };
 
     static async cadastrarGet(req, res){
@@ -39,7 +49,7 @@ class UsuarioController{
                 nome: usuario.nome,
                 senha: hash
             });
-            res.redirect("/usuario?a=1");
+            res.redirect("/usuario?s=3");
 
         } else{
             const email = await UsuarioModel.findOne({email: usuario.email});
@@ -67,7 +77,7 @@ class UsuarioController{
     static async remover(req, res){
         const email = req.params.email;
         await UsuarioModel.findOneAndDelete({email: email});
-        res.redirect("/usuario?r=1");
+        res.redirect("/usuario?s=2");
     };
 
     static async loginGet(req, res){

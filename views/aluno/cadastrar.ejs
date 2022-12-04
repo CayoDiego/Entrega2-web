@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Aluno</title>
+    <%- include("../partials/header.ejs") %>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1> Cadastrar </h1>
+
+        <form style="margin-top: 5%;" action= "/aluno" method="post">
+
+            <input type="hidden" name="id" value= "<%= aluno.id %>">
+
+            <div <%= escondido %> class="mb-3">
+                <label class="form-label">Matrícula</label>
+                <input type="text" value="<%= aluno.matricula %>" required class="form-control" name="matricula">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" value="<%= aluno.nome %>" required class="form-control" name="nome">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input type="password" value="<%= aluno.senha %>" required class="form-control" name="senha">
+            </div>
+
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a class="btn btn-dark" href="/">Voltar</a>
+        </form>
+
+    </div>
+
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+</html>

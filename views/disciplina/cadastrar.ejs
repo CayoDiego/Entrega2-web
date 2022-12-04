@@ -13,25 +13,25 @@
 
     <div class="container">
 
-        <p style="font-size:40px; margin-top: 2%;"> Cadastrar </p>
+        <h1> Cadastrar </h1>
 
-        <form style="margin-top: 5%;" action= "/vendedor" method="post">
+        <form style="margin-top: 5%;" action= "/disciplina" method="post">
 
-            <input type="hidden" name="id" value="<%= vendedor.id %>">
+            <input type="hidden" name="id" value="<%= disciplina.id %>">
 
-            <div <%= escondido %> class="mb-3">
-                <label class="form-label">Código</label>
-                <input required type="text" value="<%= vendedor.codigo %>" required class="form-control" name="codigo">
+            <div <%= escondido %>  class="mb-3">
+                <label class="form-label">Disciplina</label>
+                <input required type="text" value="<%= disciplina.disciplina %>" required class="form-control" name="disciplina">
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Nome</label>
-                <input type="text" value="<%= vendedor.nome %>" required class="form-control" name="nome">
+                <input type="text" value="<%= disciplina.nome %>" required class="form-control" name="nome">
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Idade</label>
-                <input type="text" value="<%= vendedor.idade %>" required class="form-control" name="idade">
+                <label class="form-label">Senha</label>
+                <input type="password" value="<%= disciplina.senha %>" required class="form-control" name="senha">
             </div>
 
             <button type="submit" class="btn btn-success" >Salvar</button>

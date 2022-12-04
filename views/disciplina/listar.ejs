@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Usuários</title>
+    <title>Listar</title>
     <%- include("../partials/header.ejs") %>
 </head>
 
@@ -13,7 +13,7 @@
     
     <div class="container">
 
-        <h1> Usuários Cadastrados </h1>
+        <p style="font-size:40px;"> Cadastrados </p>
 
         <% if (mensagem != undefined) {
             const css = `color:${cor}`%>
@@ -26,29 +26,29 @@
         <table class="table">
 
             <tr>
-                <th>E-mail</th>
+                <th>Disciplina</th>
                 <th>Nome</th>
                 <th>Detalhar</th>
                 <th>Alterar</th>
                 <th>Deletar</th>
             </tr>
 
-            <% for(let usuario of listaUsuarios) {  %>
+            <% for(let disciplina of listaDisciplinas) {  %>
                 <tr>
                     <td>
-                        <%= usuario.email%>
+                        <%= disciplina.disciplina%>
                     </td>
                     <td>
-                        <%= usuario.nome%>
+                        <%= disciplina.nome%>
                     </td>
                     <td>
-                        <a class="btn btn-outline-success" href="/usuario/<%= usuario.email %>">Detalhes</a>
+                        <a class="btn btn-outline-success" href="/disciplina/<%= disciplina.disciplina %>">Detalhes</a>
                     </td>
                     <td>
-                        <a class="btn btn-outline-info" href="/usuario/cadastrar/<%= usuario.email %>">Atualizar</a>
+                        <a class="btn btn-outline-info" href="/disciplina/cadastrar/<%= disciplina.disciplina %>">Atualizar</a>
                     </td>
-                    <td>    
-                        <a class="btn btn-outline-danger" onclick="return confirm('Confirmar remoção?')" href="/usuario/remover/<%= usuario.email %>">Remover</a>
+                    <td>
+                        <a class="btn btn-outline-danger" onclick="return confirm('Confirmar remoção?')" href="/disciplina/remover/<%= disciplina.disciplina %>">Remover</a>
                     </td>
                 </tr>
 
@@ -57,7 +57,7 @@
         </table>
 
         <div>
-            <a class="btn btn-success" href="/usuario/cadastrar">Cadastrar</a>
+            <a class="btn btn-success" href="/disciplina/cadastrar">Cadastrar</a>
             <a class="btn btn-dark" href="/" >Voltar</a>
         </div>
 
@@ -68,6 +68,5 @@
 <foot>
     <%- include("../partials/footer.ejs") %>
 </foot>
-
 
 </html>

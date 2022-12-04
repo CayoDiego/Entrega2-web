@@ -16,21 +16,17 @@
         <table class="table">
 
             <tr>
-                <th>Código</th>
+                <th>Disciplina</th>
                 <th>Nome</th>
-                <th>Idade</th>
             </tr>
 
-            <% for(let vendedor of listaVendedores) {  %>
+            <% for(let disciplina of listaDisciplinas) {  %>
                 <tr>
                     <td>
-                        <%= vendedor.codigo%>
+                        <%= disciplina.disciplina%>
                     </td>
                     <td>
-                        <%= vendedor.nome%>
-                    </td>
-                    <td>
-                        <%= vendedor.idade%>
+                        <%= disciplina.nome%>
                     </td>
                 </tr>
 

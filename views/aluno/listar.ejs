@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Usuários</title>
+    <title>Listar Alunos</title>
     <%- include("../partials/header.ejs") %>
 </head>
 
@@ -13,12 +13,12 @@
     
     <div class="container">
 
-        <h1> Usuários Cadastrados </h1>
+        <h1> Alunos Cadastrados </h1>
 
         <% if (mensagem != undefined) {
             const css = `color:${cor}`%>
             <div style=<%= css %>> 
-                <%= mensagem %>
+                    <%= mensagem %>
             </div>
         <% } %> 
 
@@ -26,29 +26,30 @@
         <table class="table">
 
             <tr>
-                <th>E-mail</th>
+                <th>Matrícula</th>
                 <th>Nome</th>
                 <th>Detalhar</th>
                 <th>Alterar</th>
                 <th>Deletar</th>
             </tr>
 
-            <% for(let usuario of listaUsuarios) {  %>
+            <% for(let aluno of listaAlunos) {  %>
                 <tr>
                     <td>
-                        <%= usuario.email%>
+                        <%= aluno.matricula%>
                     </td>
                     <td>
-                        <%= usuario.nome%>
+                        <%= aluno.nome%>
+                    </td>
+
+                    <td>
+                        <a class="btn btn-outline-success" href="/aluno/<%= aluno.matricula %>">Detalhes</a>
                     </td>
                     <td>
-                        <a class="btn btn-outline-success" href="/usuario/<%= usuario.email %>">Detalhes</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-outline-info" href="/usuario/cadastrar/<%= usuario.email %>">Atualizar</a>
+                        <a class="btn btn-outline-info" href="/aluno/cadastrar/<%= aluno.matricula %>">Atualizar</a>
                     </td>
                     <td>    
-                        <a class="btn btn-outline-danger" onclick="return confirm('Confirmar remoção?')" href="/usuario/remover/<%= usuario.email %>">Remover</a>
+                        <a class="btn btn-outline-danger" onclick="return confirm('Confirmar remoção?')" href="/aluno/remover/<%= aluno.matricula %>">Remover</a>
                     </td>
                 </tr>
 
@@ -57,7 +58,7 @@
         </table>
 
         <div>
-            <a class="btn btn-success" href="/usuario/cadastrar">Cadastrar</a>
+            <a class="btn btn-success" href="/aluno/cadastrar">Cadastrar</a>
             <a class="btn btn-dark" href="/" >Voltar</a>
         </div>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório de Carros</title>
+    <title>Relatório de Alunos</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 
@@ -16,21 +16,17 @@
         <table class="table">
 
             <tr>
-                <th>Placa</th>
-                <th>Fabricante</th>
-                <th>Cor</th>
+                <th>Matrícula</th>
+                <th>Nome</th>
             </tr>
 
-            <% for(let carro of listaCarros) {  %>
+            <% for(let aluno of listaAlunos) {  %>
                 <tr>
                     <td>
-                        <%= carro.placa%>
+                        <%= aluno.matricula%>
                     </td>
                     <td>
-                        <%= carro.fabricante%>
-                    </td>
-                    <td>
-                        <%= carro.cor%>
+                        <%= aluno.nome%>
                     </td>
                 </tr>
 

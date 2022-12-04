@@ -19,11 +19,11 @@ app.use(session({
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGO_URI);
 
-const vendedorRoutes = require("./routes/vendedorRoutes");
-app.use(vendedorRoutes);
+const disciplinaRoutes = require("./routes/disciplinaRoutes");
+app.use(disciplinaRoutes);
 
-const carroRoutes = require("./routes/carroRoutes");
-app.use(carroRoutes);
+const alunoRoutes = require("./routes/alunoRoutes");
+app.use(alunoRoutes);
 
 const usuarioRoutes = require("./routes/usuarioRoutes");
 app.use(usuarioRoutes);

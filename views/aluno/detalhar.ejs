@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendedor</title>
+    <title>Aluno</title>
     <%- include("../partials/header.ejs") %>
 </head>
 
@@ -13,15 +13,14 @@
 
     <div class="container">
 
-        <p style="font-size:40px; margin-top: 2%;"> Detalhes: </p>
+        <h1> Detalhes: </h1>
 
         <div style="text-align: center; font-size: 20px; margin-top: 8%;">
-            <div> <b> Código: </b> <%= resultado.codigo %> </div>
+            <div> <b> Matrícula: </b> <%= resultado.matricula %> </div>
             <div> <b> Nome: </b> <%= resultado.nome %> </div>
-            <div> <b> Idade: </b> <%= resultado.idade %> </div>
         </div>
 
-        </br><a style="margin-left: 90%; margin-top: 20%;" class="btn btn-dark" href="/vendedor" >Voltar</a>
+        </br><a style="margin-left: 90%; margin-top: 20%;" class="btn btn-dark" href="/aluno" >Voltar</a>
 
     </div>
     
